@@ -11,6 +11,8 @@ def grad1(x):
     return result
 
 
+# for function visualisation: 1.5 - exp(-x^2 - y^2) - 0.5 * exp(-(x-1)^2 - (y+2)^2)
+
 def function2(vector):
     x1 = vector[0]
     x2 = vector[1]
@@ -27,8 +29,6 @@ def grad2(vector):
               2*x2*np.exp(-np.power(x1,2) - np.power(x2,2)) + (x2+2)*np.exp(-np.power(x1-1,2) - np.power(x2+2,2))])
     return result
 
-
-starting_point = 10
 
 
 def calculate_function_minimum(function, gradient, starting_point, step, reduction_param, loop_limit, eps):
@@ -57,13 +57,12 @@ def calculate_function_minimum(function, gradient, starting_point, step, reducti
 
     return x
 
+starting_point = 10
 
 ans = calculate_function_minimum(function1, grad1, starting_point, 0.01, 0.9, 20, 0.001)
 print(ans)
 
-starting_point_2 = np.array([1,-1.5])
 
+starting_point_2 = np.array([1,-1.5])
 print(calculate_function_minimum(function2, grad2, starting_point_2, 1, 0.9, 5, 0.001))
-# print(data+data)
-# print(function2(data))
-# print(grad2(data))
+
