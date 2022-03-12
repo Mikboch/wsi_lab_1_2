@@ -1,8 +1,7 @@
 import numpy as np
-import plotly.express as px
 import pandas as pd
 from plotly.subplots import make_subplots
-import plotly.graph_objects as go
+import matplotlib.pyplot as plt
 
 from fun1 import function1, grad1
 from fun2 import function2, grad2
@@ -31,14 +30,18 @@ for i in range(len(step_array_1)):
         y=solutions_array_1
     ))
 
-    # trace1 = px.line(data_frame=df, x="x", y="y", title="Function 1")
-    # trace2 = px.scatter(x=starting_point_array_1, y=solutions_array_1)
-    fig1.append_trace(go.Scatter(x=starting_point_array_1, y=solutions_array_1),row=i+1, col=1)
-    # fig1.append_trace(go.Figure(data=trace1.data + trace2.data), row=i+1, col=1)
 
-    # fig1 = go.Figure(data=trace1.data + trace2.data)
-    # fig1.update_traces(marker=dict(color='red'))
-fig1.show()
+    plt.subplot(4,1,i+1)
+    plt.plot(starting_point_array_1, solutions_array_1)
+    plt.title("Chosen step: "+str(step_array_1[i]))
+    plt.grid(visible=True)
+    plt.scatter(starting_point_array_1, solutions_array_1, marker='o')
+    plt.subplots_adjust(hspace=0.7)
+
+
+plt.xlabel('Randomized points')
+plt.ylabel('Calculated function minimum')
+plt.show()
 
 
 print('')
