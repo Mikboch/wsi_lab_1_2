@@ -3,16 +3,16 @@ from math import *
 
 
 def calculate_function_minimum_from_input():
-    variables = input("Enter all funtion variables separated with a comma: ")
+    variables = input("Enter all function variables separated with a comma: ")
     function_definition = input("Enter the function, which minimum will be calculated: ")
     function = eval("lambda {0}: {1}".format(variables, function_definition))
     gradient_definition = input("Enter the function's gradient: ")
     gradient = eval("lambda {0}: {1}".format(variables, gradient_definition))
-    starting_point = input("Enter the starting point: ")
-    step = input("Enter the step: ")
-    reduction_param = input("Enter the reduction parameter: ")
-    loop_limit = input("Enter the number of loops: ")
-    eps = input("Enter the precision: ")
+    starting_point = float(input("Enter the starting point: "))
+    step = float(input("Enter the step: "))
+    reduction_param = float(input("Enter the reduction parameter: "))
+    loop_limit = float(input("Enter the number of loops: "))
+    eps = float(input("Enter the precision: "))
 
     return function, gradient, starting_point, step, reduction_param, loop_limit, eps
 

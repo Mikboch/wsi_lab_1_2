@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
-from plotly.subplots import make_subplots
 import matplotlib.pyplot as plt
+from math import *
 
 from fun1 import function1, grad1
 from fun2 import function2, grad2
@@ -43,8 +43,8 @@ print(starting_point_array_1)
 # plt.ylabel('Calculated function minimum')
 # plt.show()
 
-function_params = calculate_function_minimum_from_input()
-calculate_function_minimum(function_params)
+function, gradient, starting_point, step, reduction_param, loop_limit, eps = calculate_function_minimum_from_input()
+print(calculate_function_minimum(function, gradient, starting_point, step, reduction_param, loop_limit, eps))
 
 print('')
 #===========================function2================================
