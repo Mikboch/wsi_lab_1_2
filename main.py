@@ -2,12 +2,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from math import *
-
 from fun1 import function1, grad1
 from fun2 import function2, grad2
-from gradient_descent import calculate_function_minimum, calculate_function_minimum_from_input
+from gradient_descent import calculate_function_minimum
 
-# for function visualisation: 1.5 - exp(-x^2 - y^2) - 0.5 * exp(-(x-1)^2 - (y+2)^2)
 
 number_of_points_1 = 30
 
@@ -43,18 +41,18 @@ print(starting_point_array_1)
 # plt.ylabel('Calculated function minimum')
 # plt.show()
 
-function, gradient, starting_point, step, reduction_param, loop_limit, eps = calculate_function_minimum_from_input()
-print(calculate_function_minimum(function, gradient, starting_point, step, reduction_param, loop_limit, eps))
 
 print('')
+# for function visualisation: 1.5 - exp(-x^2 - y^2) - 0.5 * exp(-(x-1)^2 - (y+2)^2)
 #===========================function2================================
 number_of_points_2 = 10
 starting_point_array_2 = []
+starting_point_array_2.append(np.array([2.1,1.8]))
 
-for j in range(number_of_points_2):
-    x1=(np.random.uniform(0, 1) - 0.5) * 6
-    x2=(np.random.uniform(0, 1) - 0.5) * 6
-    starting_point_array_2.append(np.array([x1, x2]))
+# for j in range(number_of_points_2):
+#     x1=(np.random.uniform(0, 1) - 0.5) * 6
+#     x2=(np.random.uniform(0, 1) - 0.5) * 6
+#     starting_point_array_2.append(np.array([x1, x2]))
 
 print("Start values for function 2: ")
 print(starting_point_array_2)
