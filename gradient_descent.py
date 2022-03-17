@@ -36,6 +36,8 @@ def calculate_function_minimum(function, gradient, starting_point, step, reducti
                 break
         else:
             gradient_value_next = gradient(x_next)
+            print("Next val grad: " + str(gradient_value_next))
+            print(np.linalg.norm(gradient_value_next))
             if np.linalg.norm(gradient_value_next) <= eps:
                 break
             k = 0
