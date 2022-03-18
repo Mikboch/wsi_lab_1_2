@@ -19,7 +19,7 @@ def calculate_function_minimum_from_input():
 
 def calculate_function_minimum(function, gradient, starting_point, step, reduction_param, loop_limit, eps):
     x = starting_point
-    k = 0
+    loop_counter = 0
 
     while True:
         value = function(x)
@@ -31,14 +31,14 @@ def calculate_function_minimum(function, gradient, starting_point, step, reducti
 
         if next_value >= value:
             step = step * reduction_param
-            k = k + 1
-            if k > loop_limit:
+            loop_counter = loop_counter + 1
+            if loop_counter > loop_limit:
                 break
         else:
             gradient_value_next = gradient(x_next)
             if np.linalg.norm(gradient_value_next) <= eps:
                 break
-            k = 0
+            loop_counter = 0
             x = x_next
 
     return x

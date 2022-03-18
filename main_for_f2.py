@@ -7,8 +7,11 @@ from gradient_descent import calculate_function_minimum
 # for function visualisation: 1.5 - exp(-x^2 - y^2) - 0.5 * exp(-(x-1)^2 - (y+2)^2)
 number_of_points_2 = 10
 starting_point_array_2 = []
+
+#możliwość wyliczenia wyniku dla konkretnego punktu, ktory poda uzytkownik
 starting_point_array_2.append(np.array([1.1, -2.1]))
 
+#wyliczenie wyniku dla wielu wylosowanych wartosci
 # for j in range(number_of_points_2):
 #     x1=(np.random.uniform(0, 1) - 0.5) * 6
 #     x2=(np.random.uniform(0, 1) - 0.5) * 6
